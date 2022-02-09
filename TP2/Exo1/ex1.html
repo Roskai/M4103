@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Exo1</title>
+</head>
+<body>
+  <script >
+	let mois = ["Janvier", "Fevrier", "Mars",   "Avril", "Mai", "Juin", "Juillet",  "Aout",     "Septembre", "Octobre", "Novembre", "Décembre"]
+	let nbJour = [31,   28,31,30,31,30,31,31,30,31,30,31]
+	window.document.write ("<table><thead><tr>")
+	for ( let i = 0; i<12; i++){
+		window.document.write("<th>"+mois[i]+"</th>")
+	}
+	window.document.write ("</tr></thead><tbody><tr>");
+	for ( let j = 0; j<12; j++){
+		window.document.write("<td>"+nbJour[j]+"</td>")
+	}
+	window.document.write ("</tr></tbody><table");
+	</script>
+</body>
+</html>
+
+<!--
+
+a - Quelle action est à répéter ?
+afficher le mois puis je jour
+b - Combien de fois il faut répéter cette action ?
+12 ( de 0 à 11)
+c - Quel est ce type de parcours ?
+parcours complet a traitement systématique
+-->

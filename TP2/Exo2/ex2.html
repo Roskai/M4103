@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Exo2</title>
+</head>
+<body>
+  <script >
+	let mois = ["Janvier", "Fevrier", "Mars",   "Avril", "Mai", "Juin", "Juillet",  "Aout","Septembre", "Octobre", "Novembre", "Décembre"]
+	let nbJour = [31,28,31,30,31,30,31,31,30,31,30,31]
+	let veutPaire = confirm("Afficher uniquement les mois contenant un nombre de jours pair ?");
+	let pariteVoulu = 0
+	window.document.write ("<table><tbody>")
+	// Tab >> Parcours séq. complet avec traitement conditionné
+	if (!veutPaire){
+		pariteVoulu = 1
+	}
+	for (let indice = 0; indice < mois.length; indice++){     
+		if (nbJour[indice]%2 === pariteVoulu) {   // Action à répéter sur élément courant : Tab[indice] 
+			window.document.write("<tr><th>"+mois[indice]+"</th>");
+			window.document.write("<td>"+nbJour[indice]+"</td> </tr>");
+		}
+	}
+	window.document.write ("</tbody><table");
+	</script>
+</body>
+</html>
+
+
+
+<!--
+a - Quelle action est à répéter ?
+afficher le mois puis le nombre de jour
+b - Combien de fois il faut répéter cette action ?
+soit 7 fois si c'est impaire, 5 fois si c'est paire
+c - Quel est ce type de parcours ?
+parcours complet a traitement conditionnel
+-->
+
+
