@@ -1,22 +1,76 @@
+<!--
+Exercice 6 : Manipulation des composants images, forms et links de l'objet Document
+
+Dans un script, créez 2 tableaux en Javascript contenant chacun 9 urls d'images diverses et différentes (d'un tableau à l'autre).
+Créer ensuite un tableau HTML composé de neuf cases, contenant chacune une balise <img> dont la propriété "src" restera vide dans un premier temps.
+
+1/ Créer un bouton, qui lorsqu'on le pressera, déclenchera le chargement de toutes les cases du tableau HTML avec les images du 1er tableau d'image
+JS créé préalablement.
+
+2/ Ajouter le code Javascript nécessaire pour qu'au survol de chacune des images,
+l'image affichée soit remplacée par l'image du second tableau javacript correspondant au même index.
+-->
+
 <html>
     <head>
-		<meta charset="utf-8">
-        <title>Manipulation des composants images, forms et links de l'objet Document</title> 
+		    <meta charset="utf-8">
+        <title>Manipulation des composants images, forms et links de l'objet Document</title>
     </head>
 	<body>
-		<script>
-			let tabImage1 = [
-				"https://i.kym-cdn.com/photos/images/original/001/597/651/360.jpg",
-				"https://gallica.bnf.fr/ark:/12148/btv1b52501620s/f12.highres",
-				"https://cdnb.artstation.com/p/assets/images/images/026/879/797/large/paul-chadeisson-testspeed-0312a.jpg?1589983230",
-				"https://gallica.bnf.fr/ark:/12148/btv1b105153955/f7.highres",
-				"https://cdn.discordapp.com/attachments/897371942145908826/935468893995171861/Screenshot_20220125-103738_Facebook.jpg",
-				"https://cdn.discordapp.com/attachments/936062684816879616/936066337678184488/Manakugae.png"
-			]
-			for (var i = 0; i < tabImage1.length; i++) {
-				let lien = tabImage1[i];
-				window.document.write ("<img class='imageDuTableau' src='"+lien+"'>");
-			}
-		</script
+    <input type="button" id="boutonTabImg" name="imageImage" value="Afficher 9 images">
+    <table>
+  		<script>
+      //Les images viennent soit de Paul Chadeisson, un artiste que j'aime beaucoup, soit de pote a moi (Sei Long K et Toplune), car il est important de citer les auteurs
+  			let tabImage1 = [
+          //Par Sei-san (@Sei Long K#0206 sur Discord) :
+  				"https://cdn.discordapp.com/attachments/625749630163877910/899110343266168892/IMG_20211016_135316.jpg",
+          //Par Paul Chadeisson (https://www.artstation.com/pao)
+  				"https://cdna.artstation.com/p/assets/images/images/035/667/568/large/paul-chadeisson-testspeed-0340-1920.jpg?1615562747",
+  				"https://cdnb.artstation.com/p/assets/images/images/026/879/797/large/paul-chadeisson-testspeed-0312a.jpg?1589983230",
+          //Par Toplune (https://www.artstation.com/topelune)
+  				"https://cdn.discordapp.com/attachments/625749630163877910/885973515843534878/image0.jpg",
+  				"https://cdn.discordapp.com/attachments/625749630163877910/767874177754857532/IMG_20201018_011905_713.jpg",
+  				"https://cdn.discordapp.com/attachments/625749630163877910/833437853496770640/hubble_dragon_007_petit_avec_fili.jpg",
+          "https://cdn.discordapp.com/attachments/625749630163877910/940010021742329977/IMG_6327.jpg",
+          //Par Sei-san (@Sei Long K#0206 sur Discord) :
+          "https://cdn.discordapp.com/attachments/625749630163877910/900019308720173086/IMG_20211017_142355.jpg",
+          "https://cdn.discordapp.com/attachments/625749630163877910/900102198481023046/IMG_20211019_030127_876.jpg"
+  			]
+        let tabImage2 = [
+          //Par Sei-san (@Sei Long K#0206 sur Discord) :
+          "https://cdn.discordapp.com/attachments/625749630163877910/897200583105216512/20211011_211242.jpg",
+          "https://cdn.discordapp.com/attachments/625749630163877910/896115431721562112/unknown.png",
+          "https://cdn.discordapp.com/attachments/625749630163877910/895717792282738688/IMG_20211007_184555.jpg",
+          //Par Descendance (@FVDM XY 1999#7064 sur discord) :
+          "https://cdn.discordapp.com/attachments/876134159884623912/911190151600930836/Apocalypse_terre_eventree_Plan_de_travail_1.png",
+          //Par Skialg (@Skialg Hanmer#8401 sur Discord) :
+          "https://cdn.discordapp.com/attachments/625749630163877910/936493723473309757/IMG_20210309_124938_568.jpg",
+          //Par Dagan (@- Dagan -#0202 sur Discord) :
+          "https://cdn.discordapp.com/attachments/625749630163877910/883072894580699156/19_Mai_2020.jpg",
+          "https://cdn.discordapp.com/attachments/625749630163877910/883072936926388294/4_Juin_2020.jpg",
+          //Par Aly' (@AlyBird#3465 sur Discord) :
+          "https://cdn.discordapp.com/attachments/625749630163877910/933488201891471380/Dokal_portrait_sang.png",
+          "https://cdn.discordapp.com/attachments/625749630163877910/924000896231276584/Bethanie.jpg"
+        ]
+        let elementBoutonTabImage = document.getElementById("boutonTabImg");
+        elementBoutonTabImage.onclick = affichageTableau;
+
+          function affichageTableau() {
+              elementBoutonTabImage.disabled = true;
+               tabImage1.forEach((image,index)=>{
+                   const tr = document.createElement("tr");
+                   const img = document.createElement("img");
+                   img.setAttribute("src",image);
+                   tr.appendChild(img);
+                   document.querySelector("table").appendChild(tr)
+                   img.addEventListener("mouseover",()=>{
+                       img.src=tabImage2[index];
+                   })
+               });
+        }
+
+  	  </script>
+    </table>
+
     </body>
 </html>

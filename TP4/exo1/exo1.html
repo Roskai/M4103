@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculatrice</title>
+  </head>
+  <body>
+    Voici un formulaire simple qui calcule à votre place la somme de deux nombre entiers
+    <form name="calculatrice" method="post">
+     <input type="number" id="val1" required="required" name="valeur1">
+     +
+     <input type="number" id="val2" required="required" name="valeur2">
+     <input type="button" id="calculer" value="Calculer la somme ----->">
+     <input type="text" id="resultat" name="resultat" readonly="readonly" value="Je ne sais pas" onClick="alert('Retour à la case départ !');">
+   </form>
+
+  </body>
+  <script>
+    let elementBoutonCalcul = document.getElementById('calculer');
+    let elementResultat = document.getElementById("resultat");
+    let valeur1 = parseInt(document.getElementById("val1").value)
+    let valeur2 = parseInt(document.getElementById("val2").value)
+    elementBoutonCalcul.addEventListener('click', () => {
+  		elementResultat.value = valeur1*valeur2;
+  	});
+  </script>
+</html>
