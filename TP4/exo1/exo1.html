@@ -7,21 +7,28 @@
   <body>
     Voici un formulaire simple qui calcule à votre place la somme de deux nombre entiers
     <form name="calculatrice" method="post">
-     <input type="number" id="val1" required="required" name="valeur1">
-     +
-     <input type="number" id="val2" required="required" name="valeur2">
-     <input type="button" id="calculer" value="Calculer la somme ----->">
-     <input type="text" id="resultat" name="resultat" readonly="readonly" value="Je ne sais pas" onClick="alert('Retour à la case départ !');">
-   </form>
-
+     <input type="number" id="val1" required="required" name="val1">
+     <input type="text" name="operateur" required="required" required pattern="(\+\-\*\/){1}"value="">
+     <input type="number" id="val2" required="required" name="val2">
+     <input type="button" id="calculer" value="Calculer la somme ----->" onClick="setResultat()">
+     <input type="text" id="resultat" name="resultat" readonly="readonly" value="Je ne sais pas">
+    </form>
   </body>
   <script>
-    let elementBoutonCalcul = document.getElementById('calculer');
-    let elementResultat = document.getElementById("resultat");
-    let valeur1 = parseInt(document.getElementById("val1").value)
-    let valeur2 = parseInt(document.getElementById("val2").value)
-    elementBoutonCalcul.addEventListener('click', () => {
-  		elementResultat.value = valeur1*valeur2;
-  	});
-  </script>
+  function valeurVal1() {
+    return parseInt(document.calculatrice.val1.value)
+  }
+  function valeurVal2() {
+    return parseInt(document.calculatrice.val2.value)
+  }
+  function getOperateur() {
+    return document.calculatrice.operateur.value;
+ }
+ function calcule() {
+   return valeurVal1()+valeurVal2();
+ }
+ function setResultat() {
+   document.calculatrice.resultat.value = calcule();
+ }
+ </script>
 </html>
