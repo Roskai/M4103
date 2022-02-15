@@ -59,8 +59,8 @@ l'image affichée soit remplacée par l'image du second tableau javacript corres
               elementBoutonTabImage.disabled = true;
                tabImage1.forEach((image,index)=>{
                    const tr = document.createElement("tr");
-                   const img = document.createElement("img");
-                   img.setAttribute("src",image);
+                     const img = document.createElement("img");
+                     img.setAttribute("src",image);
                    tr.appendChild(img);
                    document.querySelector("table").appendChild(tr)
                    img.addEventListener("mouseover",()=>{

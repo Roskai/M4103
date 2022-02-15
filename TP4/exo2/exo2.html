@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculatrice</title>
+    <script>
+      compteur = 1;
+      srcImage =
+      function getLienImg1() {
+        return document.defilerImage.lienImg1.value;
+      }
+      function getLienImg2() {
+        return document.defilerImage.lienImg2.value;
+      }
+      function getLienImg3() {
+        return document.defilerImage.lienImg3.value;
+     }
+     function imgSuivante() {
+
+
+     }
+    </script>
+  </head>
+  <body>
+    <form name="defilerImage" method="post">
+       Lien image 1 : <input type="url" name="lienImg1" value="https://cdn.discordapp.com/attachments/625749630163877910/943187600762601522/IMG_20220215_142815.jpg"><br>
+       Lien Image 2 : <input type="url" name="lienImg2" value=""><br>
+       Lien Image 3 : <input type="url" name="lienImg3" value=""><br>
+       <button type="button" name="precedent">Précédent</button>
+       <button type="button" name="suivant">Suivant</button>
+
+    </form>
+    <h1>Image</h1>
+    <p>
+      <img src="https://c.tenor.com/zBc1XhcbTSoAAAAC/nyan-cat-rainbow.gif" alt="">
+    </p>
+  </body>
+  <script>
+    let elementImage = document.images[0]
+    let boutonSuivant = document.defilerImage.suivant;
+   boutonSuivant.onclick = function () {
+     switch (compteur) {
+       case 1:
+         compteur++;
+         document.images[0].src = getLienImg1()
+         break;
+      case 2:
+        document.images[0].src = getLienImg2()
+        compteur++;
+        break;
+      case 3:
+        document.images[0].src = getLienImg3()
+        compteur=1;
+        break;
+     }
+   }
+   let boutonPrecedent = document.defilerImage.precedent
+   boutonPrecedent.onclick = function () {
+     {
+       switch (compteur) {
+         case 1:
+          document.images[0].src = getLienImg1();
+          compteur = 3;
+          break;
+        case 2:
+          document.images[0].src = getLienImg2()
+          compteur--;
+          break;
+        case 3:
+          document.images[0].src = getLienImg3();
+          compteur --;
+          break
+       }
+     }
+   }
+ </script>
+</html>
