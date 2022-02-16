@@ -1,0 +1,64 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Formulaire et événement</title>
+    <script language="Javascript">
+    	//Le contenu du champ nom est passé en majuscule.
+    	function nomEnMajuscule() {
+    		document.identite.nom.value = document.identite.nom.value.toUpperCase();
+    	}
+
+    	//Retourne l'age renseigné dans le formulaire (en nombre)
+    	function age() {
+    		return parseInt(document.identite.age.value);
+    	}
+
+    	//Informe l'utilisteur s'il est mineur ou majeur
+    	function informeMajorite() {
+    		if (age()<18){
+    			alert('Vous êtes mineur.');
+    		}
+    		else {
+    			alert('Vous êtes majeur.');
+    		}
+    	}
+
+    	//Informe de l'année de naissance en fonction de l'age saisi
+    	function anneeDeNaissance() {
+    		alert("Votre année de naissance est :" + (2021 - age()));
+    	}
+
+    	//Prépare un mail à envoyer lorsque l'utilisateur clique sur le bouton "Transmettre les infos"
+    	function envoyerMail() {
+    		document.identite.action = "mailto:" + document.identite.email.value;
+    	}
+
+    </script>
+
+  </head>
+
+  <body>
+	   <form name="identite" method="post">
+			Nom : <input type="text" id="nom" name="nom"><br>
+			Prenom : <input type="text" id="prenom" name="prenom"><br>
+			Age : <input name="age" id="age"><br>
+			<input type="button" id="calcAn" name="calculerannee" value="Votre année de naissance ?"><br>
+			Adresse Email où envoyer ces infos : <input size="25" name="email"><br>
+			<input type="submit" id="boutonTransmettreInformation" value="Transmettre les infos">
+		</form>
+	<script>
+		let elementNom = document.getElementById("nom");
+		elementNom.onblur = nomEnMajuscule;
+
+		let elementAge = document.forms["identite"].elements["age"];
+		elementAge.onchange = informeMajorite;
+
+		let elementAnneNaissance = document.identite.calculerannee;
+		elementAnneNaissance.onkeydown  = anneeDeNaissance;
+
+		let elementBoutonTransmettre = document.getElementById("boutonTransmettreInformation");
+		elementBoutonTransmettre.onclick = envoyerMail;
+
+
+	</script>
+
+</body></html>

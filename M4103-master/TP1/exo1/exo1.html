@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<HTML>
+	<HEAD>
+		<TITLE>Exemples d'exploitation de scripts avec des boites de dialogue</TITLE>
+		<!--
+		<script src="mesfonctions.js"> </script>
+		exo2
+		Q2
+		-->
+		<!--
+		<script> 
+		function incr(laVariable){
+			return ( parseInt(laVariable) + 1 );
+		}
+		</script>
+		fin exo2 Q2
+		debut exo3 Q2
+		-->
+		<script Language="Javascript">
+			maVariable = 1 
+			maVariable=maVariable+1;
+			alert ("Après ajout de 1, maVariable vaut "+ maVariable);
+			//q1 exo 3 
+			function incr(laVariable){
+			return ( parseInt(laVariable) + 1 );
+			}
+			//fin q1 exo3
+			maVariable=incr(maVariable);
+			alert ("Après utilisation de la fonction incr, maVariable vaut "+ maVariable);
+			maVariable=prompt("Quelle valeur veux tu donner à maVariable ?")
+			alert("Après prompt, maVariable= "+maVariable);
+			val=confirm("Veux-tu naviguer par ici ?");
+			alert(val);
+			if (val==true) {
+				open("par-ici.html", "mafenetre", "menubar=0, width=250, height=150, top=100, left=100");
+			}
+			else
+			{
+				open("par-la.html", "mafenetre", "menubar=0, width=250, height=150, top=100, left=100");
+			}
+			
+			//Q5 Exo3
+			//document.write("C'est facile de generer du XHTML dans la page XHTML active");
+			//document.write('<BR/> Il suffit de taper <STRONG> du texte et des balises </STRONG><BR/><HR/>');
+			document.write('<H3> <FONT COLOR="red"> Ca marche même avec des variables : ' + maVariable + ' ou des fonctions : '+incr(maVariable)+'</FONT>');
+		</script>
+	</HEAD>
+	<BODY>
+		<!--
+		Q2 exo3
+		<script Language="Javascript">
+			maVariable = 1 
+			maVariable=maVariable+1;
+			alert ("Après ajout de 1, maVariable vaut "+ maVariable);
+			//q1 exo 3 
+			function incr(laVariable){
+			return ( parseInt(laVariable) + 1 );
+			}
+			//fin q1 exo3
+			maVariable=incr(maVariable);
+			alert ("Après utilisation de la fonction incr, maVariable vaut "+ maVariable);
+			maVariable=prompt("Quelle valeur veux tu donner à maVariable ?")
+			alert("Après prompt, maVariable= "+maVariable);
+			val=confirm("Veux-tu naviguer par ici ?");
+			alert(val);
+			if (val==true) {
+				open("par-ici.html", "mafenetre", "menubar=0, width=250, height=150, top=100, left=100");
+			}
+			else
+			{
+				open("par-la.html", "mafenetre", "menubar=0, width=250, height=150, top=100, left=100");
+			}
+			document.write("C'est facile de generer du XHTML dans la page XHTML active");
+			document.write('<BR/> Il suffit de taper <STRONG> du texte et des balises </STRONG><BR/><HR/>');
+			document.write('<H3> <FONT COLOR="red"> Ca marche même avec des variables : ' + maVariable + ' ou des fonctions : '+incr(maVariable)+'</FONT>');
+		</script>
+		-->
+		<!--		exo3 Q3
+		<script> 
+		//
+		//ne marche pas
+		function incr(laVariable){
+			return ( parseInt(laVariable) + 1 );
+		}
+		</script>
+		-->
+		C'est facile de generer du XHTML dans la page XHTML active
+		<BR/> Il suffit de taper <STRONG> du texte et des balises </STRONG><BR/><HR/>
+	</BODY>
+</HTML>
+
+<!---
+Avantage du fichier script
+	Permet de tout centraliser les code JS en un seul fichier
+Désavantage
+	
+Mettre le javascript dans l'entête sera executer avant ce qui est dans le corp
+--->

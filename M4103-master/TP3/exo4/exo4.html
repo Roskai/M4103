@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Historique</title>
+    </head>
+    <body>
+	<p>
+	<script>
+	let longueurHistorique = history.length
+	window.document.write (longueurHistorique+" page(s) ont été visité avant cette page.")
+	window.document.write ("<button id='go-forward'>Aller vers le futur !</button>")
+	document.getElementById('go-forward').addEventListener('click', e => {
+		window.history.forward();
+	})
+	window.document.write ("<button id='go-back'>Aller vers le passé !</button>")
+	document.getElementById('go-back').addEventListener('click', () => {
+		window.history.back();
+	});
+	</script>
+	</p>
+	</body>
+</html>

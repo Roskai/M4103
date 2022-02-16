@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Taille de l'écran</title> 
+    </head>
+    <body>
+	<p>screen.height correspond a la taille totale de l'écrant et screen.availHeight a la taille de l'écran sans l'interface
+	<script>
+		let hauteur = window.screen.height
+		let longeur = window.screen.width
+		let availHaut = window.screen.availHeight
+		let availLong = window.screen.availWidth
+		window.document.write ("l'écran  avec l'interface fait "+hauteur+" par "+longeur+" alors que celle avec fait "+availHaut+" par "+availLong+" !");
+		if (hauteur > 600 && longeur > 800 ) {
+			window.document.write ('<img src="http://upload.wikimedia.org/wikipedia/commons/a/a6/ChateauBayonne.jpg"')
+		}
+		else {
+			window.document.write ('<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/ChateauBayonne.jpg/220px-ChateauBayonne.jpg"')
+		}
+
+	</script>
+	</p>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculatrice</title>
+  </head>
+  <body>
+    Voici un formulaire simple qui calcule à votre place la somme de deux nombre entiers
+    <form name="calculatrice" method="post">
+     <input type="number" id="val1" required="required" name="val1">
+     <input type="text" name="operateur" required="required" required pattern="(\+\-\*\/){1}" value="">
+     <input type="number" id="val2" required="required" name="val2">
+     <input type="button" id="calculer" value="Calculer la somme ----->" onClick="setResultat()">
+     <input type="text" id="resultat" name="resultat" readonly="readonly" value="Je ne sais pas">
+    </form>
+  </body>
+  <script>
+  function valeurVal1() {
+    return parseInt(document.calculatrice.val1.value)
+  }
+  function valeurVal2() {
+    return parseInt(document.calculatrice.val2.value)
+  }
+  function getOperateur() {
+    return document.calculatrice.operateur.value;
+ }
+ function calcule() {
+   return valeurVal1()+valeurVal2();
+ }
+ function setResultat() {
+   document.calculatrice.resultat.value = calcule();
+ }
+ </script>
+</html>

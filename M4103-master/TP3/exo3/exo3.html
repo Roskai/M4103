@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Propriété navigateur</title> 
+    </head>
+    <body>
+	<p>
+	<script>
+		let appName = navigator.appName
+		let appVersion = navigator.appVersion
+		let  platform =  navigator.platform 
+		let userAgent = navigator.userAgent
+		window.document.write (appName+"<br>"+appVersion+"<br>"+platform+"<br>"+userAgent)
+		if(navigator.appCodeName == "Mozilla"){
+			window.document.write ('<img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Firefox_logo%2C_2019.svg/1200px-Firefox_logo%2C_2019.svg.png"')
+		}
+		else if (navigator.appCodeName == "Internet Explorer")  {
+			window.document.write ('<img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Internet_Explorer_10%2B11_computer_icon.png"')
+		}
+		else{
+			window.document.write ('<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/ChateauBayonne.jpg/220px-ChateauBayonne.jpg"')
+		}
+	</script>
+	</p>
+	</body>
+</html>

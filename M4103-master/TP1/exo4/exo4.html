@@ -1,0 +1,255 @@
+<html>
+
+<head>
+
+      <title>Visibilité des variables</title>
+
+      
+
+<script language="JavaScript"> 
+
+<!--début
+
+G=false;L1=false;L2=false;C=false;S=false;
+
+
+
+function globaler()
+
+{document.affiche.globale.value=' G = 1';
+
+}
+
+function localer1()
+
+{L1=true;
+
+ document.affiche.globale.value=' G = 1';
+
+ document.affiche.locale1.value=' G , L , S : visibles';
+
+}
+
+function delocaler1()
+
+{if (C)  {document.affiche.locale1.value=' S déclarée'}
+
+    else {document.affiche.locale1.value=' '}     
+
+}
+
+function localer2()
+
+{L2=true;
+
+ if (C)  {document.affiche.locale2.value='G T S : visibles';}
+
+    else {document.affiche.locale2.value='Erreur S inconnue';}
+
+}
+
+function delocaler2()
+
+{if (C)  {document.affiche.locale2.value='S visible';}
+
+    else {document.affiche.locale2.value=' ';}
+
+}
+
+function comencer()
+
+{G=true; C=true;
+
+ document.affiche.globale.value =' G=1'; 
+
+ document.affiche.locale1.value=' G , L , S : visibles';
+
+ document.affiche.commence.value=' G=1 ; L=2 ; S=3';
+
+}
+
+function decomencer()
+
+{document.affiche.locale1.value=' S déclarée';
+
+ document.affiche.commence.value=' G=1 ; S=3';
+
+ if (S)  {document.affiche.locale2.value=' S déclarée';}
+
+    else {document.affiche.locale2.value='           ';}
+
+}
+
+function suivrer()
+
+{G=true; S=true;
+
+ if (C) {document.affiche.suit.value='G=1 ; S=3 ; T=4';
+
+         document.affiche.locale2.value='G T S : visibles';
+
+        }
+
+    else{document.affiche.locale2.value=' S non déclarée';
+
+         document.affiche.suit.value='erreur'
+
+         S=false;}
+
+}
+
+function desuivrer()
+
+{if (C)  {document.affiche.suit.value=' G=1 ; S=3'}
+
+    else {document.affiche.suit.value='          '}
+
+ if (C)  {document.affiche.locale2.value='S : visible';}
+
+    else {document.affiche.locale2.value='           ';}
+
+}
+
+function alerter1()
+
+{if (G && C) {document.affiche.alertGS.value='G=1 et S=3'}
+
+        else {document.affiche.alertGS.value='erreur S inconnue'}    
+
+}
+
+function dealerter1()
+
+{document.affiche.alertGS.value=' ';
+
+}
+
+function alerter2()
+
+{document.affiche.alertLT.value=' L et T ne sont pas visibles';
+
+}
+
+function dealerter2()
+
+{document.affiche.alertLT.value=' ';
+
+}
+
+function razer()
+
+{G=false;L1=false;L2=false;C=false;S=false;
+
+ document.affiche.globale.value='';
+
+ document.affiche.locale1.value='';
+
+ document.affiche.locale2.value='';
+
+ document.affiche.commence.value='';
+
+ document.affiche.suit.value='';
+
+ document.affiche.alertGS.value='';
+
+ document.affiche.alertLT.value='';
+
+}
+
+//--fin--> 
+
+</script>
+
+</head>
+
+<body alink="#ff0000" text="#000000" bgcolor="#ffffee" vlink="#551a8b" link="#0000ee">
+
+<table  border bgcolor="#99ee99" cellspacing="0">
+
+       <tr><td><b>&nbsp; VISIBILIT&Eacute; des variables. &nbsp;</b></td></tr>
+
+</table>
+
+Il est pratique de d&eacute;clarer des variables locales dans les fonctions.<br>
+
+Avantage : elles sont ind&eacute;pendantes. Inconv&eacute;nient : elles sont invisibles dans les scripts. 
+
+<hr>
+
+Passez la souris sur le script dans l'ordre du programme. Passez sur "RàZ" pour
+
+recommencer.
+
+<dd><table cellspacing="0" bgcolor="#ffffee">
+
+<tr>
+
+<td>
+
+<map name="monPrgm">
+
+<area shape="rect"   coords="0  ,20 ,85 ,35 "   href="#"   onMouseOver="globaler()">
+
+<area shape="rect"   coords="0  ,36 ,164,100"   href="#"   onMouseOver="localer1()"
+
+                                                           onMouseOut ="delocaler1()">
+
+<area shape="rect"   coords="0  ,100,164,164"   href="#"   onMouseOver="localer2()"
+
+                                                           onMouseOut ="delocaler2()">
+
+<area shape="rect"   coords="0  ,180,112,195"   href="#"   onMouseOver="comencer()"
+
+                                                           onMouseOut ="decomencer()">
+
+<area shape="rect"   coords="115,180,185,195"   href="#"   onMouseOver="suivrer()"
+
+                                                           onMouseOut ="desuivrer()">
+
+<area shape="rect"   coords="0  ,196,185,210"   href="#"   onMouseOver="alerter1()"
+
+                                                           onMouseOut="dealerter1()">
+
+<area shape="rect"   coords="0  ,214,185,225"   href="#"   onMouseOver="alerter2()"
+
+                                                           onMouseOut ="dealerter2()">
+
+<area shape="rect"   coords="188,19 ,243, 47"   href="#"   onMouseOver="razer()">
+
+</map> 
+
+<img src="varvisi.gif" alt="" usemap="#monPrgm" border="0">
+
+</td>
+
+<td>&nbsp; &nbsp;</td>
+
+<td valign="top">
+
+<form name="affiche"><br>
+
+<input type="text" name="globale"  size="32"><br><br>
+
+<input type="text" name="locale1"  size="32"><br><br><br>
+
+<input type="text" name="locale2"  size="32"><br><br><br>
+
+<input type="text" name="commence" size="16">
+
+<input type="text" name="suit"     size="15"><br>
+
+<input type="text" name="alertGS"  size="32"><br>
+
+<input type="text" name="alertLT"  size="32">
+
+</form>
+
+</td></tr></table>
+
+En suivant le chemin : "commencer()" &gt; "suivre()" > "alert(G);alert(S)"
+
+vous obtenez la bonne interpr&eacute;tation.
+
+</body>
+
+</html>
