@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <style>
+      .liste {  background-color: olivedrab;}
+    </style>
+    <meta charset="utf-8">
+    <title>Parcours DOM</title>
+  </head>
+  <body>
+    <ul id="maliste">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ul>
+    <button type="button" id="boutonMagique">Modifie ma liste a puce !</button>
+    <script>
+      let boutonPimp = document.getElementById("boutonMagique");
+      boutonPimp.onclick = function (){
+          let gosses = 'prout';
+          console.log(gosses);
+          $("#maliste").children().addClass( "liste" )
+      }
+    </script>
+  </body>
+</html>
