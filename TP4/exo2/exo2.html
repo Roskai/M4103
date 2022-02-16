@@ -2,10 +2,9 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Calculatrice</title>
+    <title>Défiler des images</title>
     <script>
       compteur = 1;
-      srcImage =
       function getLienImg1() {
         return document.defilerImage.lienImg1.value;
       }
@@ -23,7 +22,7 @@
   </head>
   <body>
     <form name="defilerImage" method="post">
-       Lien image 1 : <input type="url" name="lienImg1" value="https://cdn.discordapp.com/attachments/625749630163877910/943187600762601522/IMG_20220215_142815.jpg"><br>
+       Lien image 1 : <input type="url" name="lienImg1" value=""><br>
        Lien Image 2 : <input type="url" name="lienImg2" value=""><br>
        Lien Image 3 : <input type="url" name="lienImg3" value=""><br>
        <button type="button" name="precedent">Précédent</button>
@@ -36,7 +35,10 @@
     </p>
   </body>
   <script>
-    let elementImage = document.images[0]
+    let elementImage = document.images[0];
+	elementImage.onclick = function () {
+	  window.location.href=document.images[0].src;
+	}
     let boutonSuivant = document.defilerImage.suivant;
    boutonSuivant.onclick = function () {
      switch (compteur) {
