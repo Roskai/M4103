@@ -8,7 +8,12 @@
     Voici un formulaire simple qui calcule à votre place la somme de deux nombre entiers
     <form name="calculatrice" method="post">
      <input type="number" id="val1" required="required" name="val1">
-     <input type="text" name="operateur" required="required" required pattern="(\+\-\*\/){1}" value="">
+     <select name="operateur" id="operateur">
+       <option value="plus">+</option>
+       <option value="moins">-</option>
+       <option value="diviser">÷</option>
+       <option value="multiplier">×</option>
+     </select>
      <input type="number" id="val2" required="required" name="val2">
      <input type="button" id="calculer" value="Calculer la somme ----->" onClick="setResultat()">
      <input type="text" id="resultat" name="resultat" readonly="readonly" value="Je ne sais pas">
@@ -25,10 +30,33 @@
     return document.calculatrice.operateur.value;
  }
  function calcule() {
-   return valeurVal1()+valeurVal2();
+  switch (getOperateur()) {
+    case "plus":
+      return valeurVal1()+valeurVal2();
+      break;
+    case "moins":
+      return valeurVal1()-valeurVal2();
+      break;
+    case "multiplier":
+      return valeurVal1()*valeurVal2();
+      break;
+    case "diviser":
+      try {
+        if (valeurVal2()==0) {
+          throw "nope";
+        }
+        return valeurVal1()/valeurVal2();
+      }
+      catch {
+        return NaN;
+      }
+    }
+
+
  }
  function setResultat() {
    document.calculatrice.resultat.value = calcule();
  }
+
  </script>
 </html>

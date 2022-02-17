@@ -17,10 +17,10 @@
     </ul>
     <button type="button" id="boutonMagique">Modifie ma liste a puce !</button>
     <script>
-      let boutonPimp = document.getElementById("boutonMagique");
-      boutonPimp.onclick = function (){
-          $("#maliste").children().addClass( "liste" );
+      $("#boutonMagique").click(function (){
+        $("#maliste").children().addClass( "liste" );
       }
+
     </script>
   </body>
 </html>

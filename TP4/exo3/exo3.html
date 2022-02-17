@@ -31,12 +31,11 @@
     </tbody>
     </table>
     <script>
-      $(document).ready(function() {
-          $("img").mouseover(function () {
-              sourcesImg = $(this).attr("src");
-              document.getElementById('imageRendu').src = sourcesImg;
-          });
+    $(document).ready(function() {
+      $("img").mouseover(function () {
+        $('#imageRendu').src = $(this).attr("src");
       });
-    </script>
+    });
+  </script>
   </body>
 </html>
