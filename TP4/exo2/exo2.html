@@ -31,16 +31,16 @@
     </form>
     <h1>Image</h1>
     <p>
-      <img src="https://c.tenor.com/zBc1XhcbTSoAAAAC/nyan-cat-rainbow.gif" alt="">
+      <img src="" alt="">
     </p>
   </body>
   <script>
-    let elementImage = document.images[0];
-	elementImage.onclick = function () {
-	  window.location.href=document.images[0].src;
-	}
-    let boutonSuivant = document.defilerImage.suivant;
-   boutonSuivant.onclick = function () {
+    const elementImage = document.images[0];
+    elementImage.onclick = function () {
+       window.location.href=document.images[0].src;
+	   }
+    const boutonSuivant = document.defilerImage.suivant;
+    boutonSuivant.onclick = function () {
      switch (compteur) {
        case 1:
          compteur++;

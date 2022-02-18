@@ -19,44 +19,41 @@
      <input type="text" id="resultat" name="resultat" readonly="readonly" value="Je ne sais pas">
     </form>
   </body>
-  <script>
-  function valeurVal1() {
-    return parseInt(document.calculatrice.val1.value)
-  }
-  function valeurVal2() {
-    return parseInt(document.calculatrice.val2.value)
-  }
-  function getOperateur() {
-    return document.calculatrice.operateur.value;
- }
- function calcule() {
-  switch (getOperateur()) {
-    case "plus":
-      return valeurVal1()+valeurVal2();
-      break;
-    case "moins":
-      return valeurVal1()-valeurVal2();
-      break;
-    case "multiplier":
-      return valeurVal1()*valeurVal2();
-      break;
-    case "diviser":
-      try {
-        if (valeurVal2()==0) {
-          throw "nope";
-        }
-        return valeurVal1()/valeurVal2();
-      }
-      catch {
-        return NaN;
-      }
-    }
-
-
- }
- function setResultat() {
-   document.calculatrice.resultat.value = calcule();
- }
-
- </script>
 </html>
+  <script>
+    function valeurVal1() {
+      return parseInt(document.calculatrice.val1.value)
+    }
+    function valeurVal2() {
+      return parseInt(document.calculatrice.val2.value)
+    }
+    function getOperateur() {
+      return document.calculatrice.operateur.value;
+   }
+   function setResultat() {
+     document.calculatrice.resultat.value = calcule();
+   }
+   function calcule() {
+     switch (getOperateur()) {
+        case "plus":
+            return valeurVal1()+valeurVal2();
+            break;
+        case "moins":
+            return valeurVal1()-valeurVal2();
+            break;
+        case "multiplier":
+            return valeurVal1()*valeurVal2();
+            break;
+        case "diviser":
+            try {
+              if (valeurVal2()==0) {
+                  throw "nope";
+              }
+              return valeurVal1()/valeurVal2();
+            }
+            catch {
+              return "Vous ne pouvez pas diviser pas zéros (0)";
+            }
+          }
+   }
+ </script>

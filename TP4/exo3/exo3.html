@@ -6,13 +6,20 @@
         .zoneRendu{vertical-align:center}
     </style>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("img").mouseover(function () {
+            document.getElementById('imageRendu').src = $(this).attr("src");;
+        });
+      });
+    </script>
     <title>Album photo</title>
   </head>
   <body>
     <table>
     <tbody>
       <tr>
-        <!-- Hop revoici les œuvre de Sei-san (@Sei Long K#0206 sur Discord)-->
+        <!-- Hop revoici les œuvres de Sei-san (@Sei Long K#0206 sur Discord)-->
         <td><img src="https://cdn.discordapp.com/attachments/625749630163877910/897200583105216512/20211011_211242.jpg" alt=""></td>
         <td><img src="https://cdn.discordapp.com/attachments/625749630163877910/896115431721562112/unknown.png" alt=""></td>
         <td><img src="https://cdn.discordapp.com/attachments/625749630163877910/895717792282738688/IMG_20211007_184555.jpg" alt=""></td>
@@ -30,12 +37,7 @@
       </tr>
     </tbody>
     </table>
-    <script>
-    $(document).ready(function() {
-      $("img").mouseover(function () {
-        $('#imageRendu').src = $(this).attr("src");
-      });
-    });
-  </script>
+
+
   </body>
 </html>
